@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Datos Personales</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }za
+        .theme-wrapper {
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 320px;
+            margin: auto;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        input, select, button {
+            width: 95%;
+            max-width: 280px;
+            margin: 5px auto;
+            padding: 8px;
+            display: block;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        /* Botones de cambio de estilo */
+        .switch-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .switch-buttons button {
+            flex: 1;
+            margin: 5px;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #ddd;
+            text-align: center;
+            border-radius: 5px;
+            border: none;
+            display: block;
+        }
+        .switch-buttons button:hover {
+            background-color: #bbb;
+        }
+        /* Estilo de alto contraste */
+        .high-contrast {
+            background-color: #511dda;
+            color: #cbda1d;
+        }
+        .high-contrast .container {
+            background-color: #511dda;
+            color: #cbda1d;
+            border: 2px solid #cbda1d;
+        }
+        .high-contrast input,
+        .high-contrast select,
+        .high-contrast button {
+            background-color: #511dda;
+            color: #cbda1d;
+            border: 1px solid #cbda1d;
+        }
+        .high-contrast button:hover {
+            background-color: #cbda1d;
+            color: #511dda;
+        }
+    </style>
+</head>
+<body>
+    <div class="theme-wrapper" id="themeWrapper">
+        <div class="container">
+            <h2>Datos Personales</h2>
+            <form id="dataForm">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="text" name="apellido" placeholder="Apellido" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="date" name="fecha" required>
+                <select name="pais" required>
+                    <option value="">Selecciona tu país</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Brasil">Brasil</option>
+                    <option value="Chile">Chile</option>
+                </select>
+                <button type="submit">Enviar</button>
+            </form>
+            
+            <div class="switch-buttons">
+                <button onclick="setNormalStyle()">Estilo Normal</button>
+                <button onclick="setHighContrast()">Alto Contraste</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function setNormalStyle() {
+            document.body.classList.remove('high-contrast');
+        }
+        
+        function setHighContrast() {
+            document.body.classList.add('high-contrast');
+        }
+    </script>
+</body>
+</html>
